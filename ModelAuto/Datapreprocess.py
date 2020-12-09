@@ -211,3 +211,50 @@ def handel_Catagorical(Train_X, Test_Y=None, selected=None,remo_dupli=True):
       return data
 
 
+
+
+def No_of_Catagorical(DATA,graph=False,text=True):
+  
+  """[summary]
+  
+    This is a helpfull Vizvalization Methoud
+    
+    It will show a graph of Total no. of Catagorical Variables in each columns.
+
+  """
+  def A(DATA,graph=False,text=True):
+    if(graph==True):
+      import seaborn as sns
+      values=[]
+      ROW=[]
+
+    data=DATA
+    df = pd.DataFrame()
+    FEATURE=[]
+    No_of_Catagorical=[]
+    for row in data:
+      da=data[row]
+
+      if(da.dtype=='O'):
+
+        if(graph==True):
+          values.append(da.value_counts().count())
+          ROW.append(row)
+        
+        FEATURE.append(row)
+        No_of_Catagorical.append(da.value_counts().count())
+
+    if(graph==True):
+      sns.barplot(x=ROW,y=values)
+
+    df['Features']=FEATURE
+    df['No_of_Catagorical']=No_of_Catagorical
+    print('\n',df,'\n')
+    
+    
+  try:
+    A(DATA=DATA,graph=graph,text=text)
+  except:
+    import pandas as pd
+    import seaborn as sns
+    A(DATA=DATA,graph=graph,text=text)

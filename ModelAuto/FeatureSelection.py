@@ -1,7 +1,8 @@
-'''
-1. Organize al the libraries
-
-'''
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+sns.set()
 
 #                                        Method 1                               
 
@@ -24,7 +25,7 @@ def backwardElimination(X_value,Y_value, sl=0.05,plot=True,con=False):
         con = Constent column if not added by default y = mx + c . c -> c*X0 (constent column)
         plot = True to show plots
         
-    Returns:
+    Returns :-
     
         It will return all the features with pvalues less than 0.05 (by default).
         

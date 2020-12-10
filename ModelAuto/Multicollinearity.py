@@ -1,10 +1,12 @@
-    """
+"""
     
     This step should only be performed afer handling Catagorical Variables
     
     
-    """
+"""
 
+import numpy as np
+import pandas as pd
 
 def Get_VIF(X):
 
@@ -69,7 +71,7 @@ def handel_Multicollinearity_Corr(DATA,sl=0.7):
     selected_columns = x_df.columns[columns]
     
 
-    return (x_df[selected_columns],selected_columns)
+    return x_df[selected_columns]
 
 
 
@@ -114,7 +116,7 @@ def handel_Multicollinearity_VIF(DATA,sl=5,con=False):
           vif["features"] = X_df.columns
          
           
-          return (X_df,vif["features"])
+          return X_df,vif["features"]
 
       else:
 

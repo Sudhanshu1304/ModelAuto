@@ -1,5 +1,12 @@
 
 # Handling Nan values
+print('hello')
+
+import pandas as pd
+
+import seaborn as sns
+
+import sklearn 
 
 def handel_nan(DATA, Median=False):
   
@@ -84,25 +91,27 @@ def handel_standardization(train, test=None):
             Row.append(row)
 
     if(len(Row) != 0):
+      
+      
+      
+      from sklearn.preprocessing import StandardScaler
+      sc = StandardScaler()
 
-        from sklearn.preprocessing import StandardScaler
-        sc = StandardScaler()
+      if type(test) != type(None):
 
-        if type(test) != type(None):
+          dat = sc.fit_transform(data[Row])
+          Tes = sc.transform(Test[Row])
+          data[Row] = dat
+          Test[Row] = Tes
 
-            dat = sc.fit_transform(data[Row])
-            Tes = sc.transform(Test[Row])
-            data[Row] = dat
-            Test[Row] = Tes
+          return (data, Test)
 
-            return (data, Test)
+      else:
 
-        else:
+          dat = sc.fit_transform(data[Row])
+          data[Row] = dat
 
-            dat = sc.fit_transform(data[Row])
-            data[Row] = dat
-
-            return data
+          return data
 
 
 # Handling Catagorical Variables

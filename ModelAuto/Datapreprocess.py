@@ -1,12 +1,7 @@
 
 # Handling Nan values
-print('hello')
 
 import pandas as pd
-
-import seaborn as sns
-
-import sklearn 
 
 def handel_nan(DATA, Median=False):
   

@@ -18,18 +18,22 @@ Description :-
 * Demo on kaggle - **Advance housing Prices**
 
     * About
+
     * Data preprocessing
         * Handling Nan
         * Handeling Standerdization
         * Hamdeling Catagorical Columns. 
+
     * Removing Multicolinier
         * Using VIF
         * Using Correlation
+
     * Feature Selection
         * backward Elimination
         * Feature Importance
         * Corrilation Methoud
         * Univarient Selection
+
     * Model Selection
         * Regression Model Selection
         * Classification Model Selection
@@ -86,4 +90,25 @@ Description :-
     * About 
 
         The dataset of this Housing Prices contains **a total of 163 columns** 
+        String -> 96
+        Int    -> 61
+        id     -> 3
+        Other  -> 3
+
+        Looking at the above values we could defintly say that it will require  many hours to get at least a good result.
         
+        In general the most difficult part in any Model Preparation is -
+        
+            1. Features selection ( there are tptal of 163 fearures to choose from in this housing model ).
+            For which we generaly have to do the analysis of each column and this will take hours.
+
+            2. Model selection - it becomes difficult many time to choose the write type of regression or classification model to select from.
+
+        Let's begin now
+
+            ~~~python
+
+            ~~~
+
+    * Data Preprocessing
+

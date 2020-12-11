@@ -14,7 +14,6 @@ def Select_Model_Regression(x_train,x_test,y_train,y_test,degree=2):
 
         DESCRIPTION :-
             This Model will compare all the different Regression models, and will return model with highest Rsq value.
-            
             It also shows performance graph comaring the models.
 
         PARAMETERS :-

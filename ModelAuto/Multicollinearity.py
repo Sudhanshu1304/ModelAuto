@@ -1,8 +1,6 @@
-"""
-    
+"""   
     This step should only be performed afer handling Catagorical Variables
-    
-    
+      
 """
 
 import numpy as np
@@ -12,11 +10,11 @@ def Get_VIF(X):
 
     """[summary]
 
-        Input = Pandas DataFrame 
+        PARAMETERS :-        
+            X = Pandas DataFrame 
         
-        Return = Pandas DataFrame of Features and there VIF values
-        
-        [ FEARURE 1] : [VIF1]
+        Return :-
+            Pandas DataFrame of Features and there VIF values
         
     """
     
@@ -44,16 +42,15 @@ def Get_VIF(X):
 def handel_Multicollinearity_Corr(DATA,sl=0.7):
     
     """[summary]
-
-        ** This Methoud could be used on large or small both type of dataset **
+        DESCRIPTION :-
+            This Methoud could be used on large or small both type of dataset
         
-        DATA = Pandas DataFrame 
+        PARAMETERS :-
+            DATA = Pandas DataFrame 
+            sl = Columns with Corr > than 0.7 (default) will be removed   
+        Returns:
         
-        sl = Columns with Corr > than 0.7 (default) will be removed 
-            
-    Returns:
-    
-        Updated DataFrame after removing Multicollniearity
+            Updated DataFrame after removing Multicollniearity
         
     """
     
@@ -83,18 +80,19 @@ def handel_Multicollinearity_Corr(DATA,sl=0.7):
 def handel_Multicollinearity_VIF(DATA,sl=5,con=False):
     
     """[summary]
-    
-                        ** CAUTION : This Method is only for Small Datasets **
+
+        DESCRIPTIONS :-
+            This Method is only for Small Datasets                                   
                         
-                        
-        This will remove all the columns with VIF greater than 5 (default value)
+        PARAMETERS :-     
+            DATA = Pandas DataFrame 
+            SL = This will remove all the columns with VIF greater than 5 (default value)
+            con = It will add a Constent column if Not present already. 
         
-        con = It will add a Constent column if Not present already. 
-        
-        RETURN : Updated DataFrame after removing Multicollniearity
+        RETURN :-
+            Updated DataFrame after removing Multicollniearity
     
     """
-
 
     def A(DATA,sl,con):
 
@@ -106,7 +104,7 @@ def handel_Multicollinearity_VIF(DATA,sl=5,con=False):
               X_df.insert(0,'Constant',1,False)
           vif = pd.DataFrame()
           
-          for i in range(X_df.shape[1]-1):
+          for _ in range(X_df.shape[1]-1):
               head=X_df.columns
               list=[vir(X_df.values, j) for j in range(X_df.shape[1])]
               if max(list)>sl:

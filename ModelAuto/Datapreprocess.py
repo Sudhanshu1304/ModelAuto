@@ -1,19 +1,25 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+import numpy as np
+
 
 # Handling Nan values
-
-import pandas as pd
 
 def handel_nan(DATA, Median=False):
   
     """[summary]
 
-      1. If no. of nan > 50% in a column it will remove that column.
-      2. int type coumn will be filled with Mean by Default.
-      3. Catagorical columns will be filled by mode.
+        DESCRIPTION :-
+            1. If no. of nan > 50% in a column it will remove that column.
+            2. int type coumn will be filled with Mean by Default.
+            3. Catagorical columns will be filled by mode.
+        
+        PARAMETERS :-
+            DATA = Dataset DataFrame
+            Median = It will fill numeric columns with median value.
 
-    Returns:
-
-        DataFrame with updated Columns
+        Returns :-
+            DataFrame with updated Columns
 
 
     """
@@ -45,32 +51,30 @@ def handel_nan(DATA, Median=False):
 # Normalizing or Standardizing DataFrame
 
 
-def handel_standardization(train, test=None):
+def handel_standardization(X_train, X_test = None):
+  
     """[summary]
 
-    ----------------------------------------------------------------
+        DESCRIPTION :-
+            stand_data = handel_standardization( DATA )
+                          OR
+            X_train ,X_test = handel_standardization (X_data , X_test)
 
-    Example:
+        PARAMETERS :-
+            X_train = Data or X_data
+            X_test  = If you have seprate Test data you can standerdize both at the same time.
+            
+        Returns:
+            If Input = X_train ,X_test
+            ==> return Train and Test after Standardizing
 
-      stand_data = handel_standardization( DATA )
-
-                    OR
-
-      X_train ,X_test = handel_standardization (X_data , X_test)
-
-    ----------------------------------------------------------------
-
-    Returns:
-
-        If Input = Train ,Test
-        ==> return Train and Test after Standardizing
-
-        If Input = single Dataset
-        ==> return Dataset after Standardizing
-
+            If Input = single Dataset
+            ==> return Dataset after Standardizing
 
     """
 
+    train = X_train
+    test  = X_test    
     if type(test) != type(None):
         data = train.copy()
         Test = test.copy()
@@ -117,39 +121,28 @@ def handel_Catagorical(Train_X, Test_Y=None, selected=None,remo_dupli=True):
 
   """[summary]
 
-      -------------------------------------------------------------------------------------
+        DESCRIPTION :- 
+            x_train , x_test = handel_Catagorical(X_data , x_test)
+                                OR
+            x_train , x_test = handel_Catagorical(X_data , x_test, selected = [Index of selected Columns --- OR -- Names of columns  ])
+                                OR
+            DATA = handel_Catagorical ( X_data)
 
-      Examples:
+        PARAMETERS :-
+        
+            Train_X = Data or X_data
+            Test_Y = If you have seprate Test data
+            selected (list ) = User can selected columns on which to perform One hot encoding
+                      list- could contain names of columns
+                                  or
+                            could contain Index too .
+                            
+            remo_dupli = will remove duplicated columns if any
 
-        x_train , x_test = handel_Catagorical(X_data , x_test)
+        Returns :-
+            Updated dateset with One hot encoded Catagorical variables.
 
-                            OR
-
-        x_train , x_test = handel_Catagorical(X_data , x_test, selected = [Index of selected Columns --- OR -- Names of columns  ])
-
-                            OR
-
-        DATA = handel_Catagorical ( X_data)
-
-      -------------------------------------------------------------------------------------
-
-      Parameter:
-
-        Train_X = Data or X_data
-
-        Test_Y = If you have seprate Test data
-
-        selected (list ) = User can selected columns on which to perform One hot encoding
-                  list- could contain names of columns
-                              or
-                        could contain Index too .
-
-        remo_dupli = will remove duplicated columns
-
-
-    Returns:
-
-    """
+  """
 
   DATA_X = Train_X.copy()
 
@@ -216,15 +209,22 @@ def handel_Catagorical(Train_X, Test_Y=None, selected=None,remo_dupli=True):
 
 
 
-
-def No_of_Catagorical(DATA,graph=False,text=True):
+def No_of_Catagorical( DATA, graph = True, text=True, SIZE = None ):
   
   """[summary]
-  
-    This is a helpfull Vizvalization Methoud
-    
-    It will show a graph of Total no. of Catagorical Variables in each columns.
 
+    DESCRIPTION :-
+        This is a helpfull Vizvalization Methoud
+        It will show a graph of Total no. of Catagorical Variables in each columns.
+    
+    PARAMETERS :-
+        DATA = Dataset of features
+        graph = Shows a bar graph of No of Catagorical Variables in each column.
+        SIZE = Tuple for gize of the graph.
+        
+    RETURN :-
+        DataFrame of No of Catagorical Variables in each column. 
+        
   """
   def A(DATA,graph=False,text=True):
     if(graph==True):
@@ -249,11 +249,17 @@ def No_of_Catagorical(DATA,graph=False,text=True):
         No_of_Catagorical.append(da.value_counts().count())
 
     if(graph==True):
+      
+      if type(SIZE)!= type(None):
+          fig = plt.figure(figsize=SIZE)
+      
+      plt.xlabel('FEATURES')
+      plt.ylabel('No. OF COLUMNS')
       sns.barplot(x=ROW,y=values)
 
     df['Features']=FEATURE
     df['No_of_Catagorical']=No_of_Catagorical
-    print('\n',df,'\n')
+    return df
     
     
   try:

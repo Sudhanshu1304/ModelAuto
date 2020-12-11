@@ -23,7 +23,7 @@ def backwardElimination(X_value,Y_value, sl=0.05,plot=True,con=False):
         Y_values = target column
         sl = Maximum Pvalue
         con = Constent column if not added by default y = mx + c . c -> c*X0 (constent column)
-        plot = True to show plots
+        plot = True to show plots (default - True)
         
     Returns :-
     
@@ -101,24 +101,20 @@ def Feature_Selection(X_data,Y_data,Top_Features,plot=True,SIZE=None):
   
   """[summary]
   
-    Description :-
+      Description :-
+        These methoud gives scores for each independent feature. Heigher the score more is its importance.
+        This will show us Graph of Top X (given by user) features .
+          
+      PARAMETERS :-
+          X_data = features datadet
+          Y_data = target column
+          Top_Features = Count of total top features you want
+          SIZE = Tuple for size of Plot
+        
+      Returns:-
+          DataFrame of top X (Top_Features) Seleted features
     
-      These methoud gives scores for each independent feature. Heigher the score more is its importance.
-      Vizvalization : This will show us Graph of Top X (given of user) features .
-        
-    PARAMETERS :-
-        
-        X_data = features datadet
-        Y_data = target column
-        Top_Features = Count of total top features you want
-        SIZE = Tuple for size of Plot
-       
-
-    Returns:-
-        
-        DataFrame of Seleted features
-    
-    """
+  """
   
   
   from sklearn.ensemble import ExtraTreesClassifier
@@ -203,7 +199,7 @@ def Feature_Selection(X_data,Y_data,Top_Features,plot=True,SIZE=None):
   
   '''.format(max(val),min(val),sum(val)/len(val)))
 
-  return (DATA,val)
+  return DATA
 
 
 
@@ -216,32 +212,22 @@ def Feature_Selection(X_data,Y_data,Top_Features,plot=True,SIZE=None):
 
 
 
-def Draw_Corr_map(DATA_X,target_column=None,target_index=-1,disp_selection=False):
-  
+def Draw_Corr_map(DATA_X,target_column=None,target_index=-1,heat_map=False):
   
   """[summary]
                               
     DESCRIPTION :-
-        
         Using this ferture we can see the correlation of features w.r.t target column
-          
-          
+        
     PARAMETERS :-
     
         DATA_X = DATA or X_data
-        
         target_column = In case your target is not in the main dataset you can add it here
-
         target_index = By default it will assumne last column to be the target .
-                  You can enter Index of targe column to
-                              Or
-                  It can be Name of the column too.
-        
-        disp_selection = if true it will show us Heat map
-    
-    
+                  ( You can enter Index of target column )   Or  (It can be Name of the column too. )
+        heat_map = if true it will show us Heat map
+      
     Returns :-
-        
         Dataframe of Features with there Corelation with the target column.
       
   """
@@ -256,6 +242,7 @@ def Draw_Corr_map(DATA_X,target_column=None,target_index=-1,disp_selection=False
   
   y_index=target_index
   Y_DATA=target_column
+  disp_selection = heat_map
   
   DATA=DATA_X.copy()
 
@@ -335,22 +322,17 @@ def Corrilation_selection(DATA_X,target_column=None,target_index=-1,Minimum_Corr
 
   
   """[summary] 
-
-    
+  
     DESCRIPTION :- 
-    
         This function will return the features whose correlation is above the Minimum_Corr value      
     
     Parameter :-
-    
         DATA_X = Features dataset
         target_column = If your target column is not in the main dataset you can give it here. 
         target_index = the Name or Index of Target column
         Minimum_Corr = Minimum value of Correlation abouve which the features are to be selected.
-          
-        
+             
     Returns :-
-      
         DataFrame of Seleted features
       
   """
@@ -504,6 +486,6 @@ def Univariant_Selection(X_data,Y_data,Top_Features,plot=True,SIZE=None):
   
   '''.format(max(val),min(val),sum(val)/len(val)))
    
-  return (DATA,val)
+  return DATA
 
 

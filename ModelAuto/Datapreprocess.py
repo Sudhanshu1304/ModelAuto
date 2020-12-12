@@ -268,3 +268,60 @@ def No_of_Catagorical( DATA, graph = True, text=True, SIZE = None ):
     import pandas as pd
     import seaborn as sns
     A(DATA=DATA,graph=graph,text=text)
+    
+    
+    
+
+
+#        Automating Data Prepocessing
+
+
+
+def Preprocessing(X_data, X_test=None ,Multi = False):
+    
+    """[summary
+    
+        DESCRIPTION :-
+            This will reduce our work by doing the fundamental Preprocessing steps.
+        
+        PARAMETERS :-
+            X_data = features datadet
+            X_test = test datadet
+            Multi = if true it will remove multicollniearity.   
+    
+    Returns:
+        Dateframe after doing data preprocessing.
+        
+        
+    """
+    
+    
+    
+
+    x_train = X_data.copy()
+    x_train = handel_nan( x_train)
+
+    if type(X_data) !=type(None):
+        x_test =X_test.copy()
+        x_test  = handel_nan(X_test)
+
+        x_train , x_test = handel_standardization(x_train,x_test)
+        x_train , x_test = handel_Catagorical(x_train , x_test)
+
+    else:
+    
+        x_train = handel_standardization(x_train)
+        x_train = handel_standardization(x_train)
+    
+
+    if Multi== True:
+        
+        from Multicollinearity import handel_Multico_Corr
+        
+        x_train = handel_Multico_Corr(x_train)
+
+    if type(X_data) !=type(None):
+        return x_train , x_test
+    else:
+        return x_train
+

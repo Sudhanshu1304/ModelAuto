@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 
 
 
-def Select_Model_Regression(x_train,x_test,y_train,y_test,degree=2):
+def Select_model_Regression(x_train,x_test,y_train,y_test,degree=2):
     
   
     """[summary]

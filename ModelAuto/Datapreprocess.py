@@ -1,7 +1,8 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
-
+import seaborn as sns
+sns.set()
 
 # Handling Nan values
 
@@ -228,7 +229,6 @@ def No_of_Catagorical( DATA, graph = True, text=True, SIZE = None ):
   """
   def A(DATA,graph=False,text=True):
     if(graph==True):
-      import seaborn as sns
       values=[]
       ROW=[]
 
@@ -265,8 +265,6 @@ def No_of_Catagorical( DATA, graph = True, text=True, SIZE = None ):
   try:
     A(DATA=DATA,graph=graph,text=text)
   except:
-    import pandas as pd
-    import seaborn as sns
     A(DATA=DATA,graph=graph,text=text)
     
     
@@ -295,9 +293,6 @@ def Preprocessing(X_data, X_test=None ,Multi = False):
         
     """
     
-    
-    
-
     x_train = X_data.copy()
     x_train = handel_nan( x_train)
 

@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 sns.set()
 
+
 #                                        Method 1                               
 
 
@@ -31,8 +32,6 @@ def backwardElimination(X_value,Y_value, sl=0.05,plot=True,con=False):
         
     """
     
-  import matplotlib.pyplot as plt
-  import numpy as np
   import statsmodels.regression.linear_model as lmd
 
 
@@ -118,9 +117,6 @@ def Feature_Selection(X_data,Y_data,Top_Features,plot=True,SIZE=None):
   
   
   from sklearn.ensemble import ExtraTreesClassifier
-  import numpy as np
-  import pandas as pd
-  
   
   if Top_Features==0:
     
@@ -232,14 +228,6 @@ def Draw_Corr_map(DATA_X,target_column=None,target_index=-1,heat_map=False):
       
   """
 
-  
-  
-  import seaborn as sns
-  import pandas as pd
-  import matplotlib.pyplot as plt
-  
-  
-  
   y_index=target_index
   Y_DATA=target_column
   disp_selection = heat_map
@@ -337,8 +325,6 @@ def Corrilation_selection(DATA_X,target_column=None,target_index=-1,Minimum_Corr
       
   """
   
-  import pandas as pd
-  
   Thresh=Minimum_Corr
   Y_DATA=target_column
   y_index=target_index
@@ -429,8 +415,7 @@ def Univariant_Selection(X_data,Y_data,Top_Features,plot=True,SIZE=None):
   
   from sklearn.feature_selection import SelectKBest
   from sklearn.feature_selection import f_classif
-  import numpy as np
-  import pandas as pd
+  
   
   features = SelectKBest(score_func=f_classif, k=Top_Features)
   fit = features.fit(X_value,Y_value)

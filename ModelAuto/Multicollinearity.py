@@ -127,6 +127,4 @@ def handel_Multico_VIF(DATA,sl=5,con=False):
     except:       
         
       from statsmodels.stats.outliers_influence import variance_inflation_factor as vir
-      import pandas as pd
-      import numpy as np
       A(DATA,sl,con)

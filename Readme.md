@@ -26,7 +26,7 @@ The modules help in -
 
 * ### [**Demo on Kaggle - Housing Prices (Advance Regression)**](#Demo%on%Kaggle%-%Housing%Prices)
     
-
+* ### [Conclusion](#Conclusion)
    
 
 
@@ -108,3 +108,18 @@ and Model selection methods.
 ### [Link to the Documentation](https://github.com/Sudhanshu1304/ModelAuto/blob/master/Documentation/Document.md)
 
 
+
+<br><br>
+
+# **Conclusion**
+
+Basically it
+
+1. Speeds up the Model making process .
+
+2. It gives us a clear understanding of the complete model which helps in looking at the minute changes which can boost 
+the model efficiency.
+
+3.  A person with very basic knowledge could also create efficient models.
+
+2. The Vizvalization techniques help in understanding concepts easily.    

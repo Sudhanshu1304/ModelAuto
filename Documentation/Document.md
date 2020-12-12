@@ -1,48 +1,48 @@
 
 # Documentation
 
+Bellow is the detailed implientation of the various modules
 
 
-Description :-
+## **Description** 
+<br>
 
-* Usages
-    * Getting Started
-    * Sample Code for complete model
-* Demo on kaggle - **Advance housing Prices**
+* ### Demo on kaggle - **Advance housing Prices**
+    <br>
 
-    * About
+    * ### [About]( #About )
 
-    * Data preprocessing
-        * Handling Nan
-        * Handeling Standerdization
-        * Handeling Catagorical Columns. 
-        * **Preprocessing** ( **All in one🤔** )
+    * ### Data preprocessing
+        * [Handling Nan](#Handling%Nan)
+        * [Handeling Standerdization](#Handling%Standerdization)
+        * [Handeling Catagorical Columns](#Handling%Catagorical%Columns) 
+        * [**Preprocessing** ( **All in one😀** )](#Preprocessing)
 
-    * Removing Multicolinier
-        * Using VIF
-        * **Using Correlation (Faster)**
+    * ### Removing Multicolinier
+        * [Using VIF](#Using%VIF)
+        * [**Using Correlation (Faster)**](#Using%Corrilation%(Faster))
 
-    * Feature Selection
-        * Backward Elimination
-        * Feature Importance
-        * Corrilation Methoud
-        * Univarient Selection
+    * ### Feature Selection
+        * [Backward Elimination](#Backward%Elimination)
+        * [Feature Importance](#Feature%Importance)
+        * [Corrilation Methoud](#Corrilation%Methoud)
+        * [Univarient Selection](#Univarient%Selection)
 
-    * Model Selection
-        * Regression Model Selection
-        * Classification Model Selection
-
+    * ### Model Selection
+        * [Regression Model Selection](#Regression%Model%Selection)
+        * [Classification Model Selection](#Classification%Model%Selection)
 
 
+<br><br>
 
-## Demo on kaggle - **Advance housing Prices**
+# **Advance Housing Prices**
 <br>
 
 
-<img src="IMAGES\KAGGLE.png" width="600px">
+<img src="IMAGES\KAGGLE.png" width="800px">
 <br><br>
 
-* About 
+* ## **About** 
 
     The dataset of this Housing Prices contains **a total of 163 columns** 
     String -> 96
@@ -54,10 +54,10 @@ Description :-
     
     In general the most difficult part in any Model Preparation is 
     
-        1. Features selection ( there are tptal of 163 fearures to choose from in this housing model ).
+    1. Features selection ( there are tptal of 163 fearures to choose from in this housing model ).
         For which we generaly have to do the analysis of each column and this will take hours.
 
-        2. Model selection - it becomes difficult many time to choose the write type of regression or classification model to select from.
+    2. Model selection - it becomes difficult many time to choose the write type of regression or classification model to select from.
 
     Let's begin now
 
@@ -76,9 +76,13 @@ Description :-
         
     ~~~
 
-* Data Preprocessing
+* ## **Data Preprocessing**
+    <br>
 
-    1. Handling Nan
+    1. ### **Handling Nan**
+    
+        <br>
+
 
         ~~~python
             
@@ -101,7 +105,9 @@ Description :-
 
         ~~~
     
-    2. Handeling Standerdization
+    2. ### **Handeling Standerdization**
+
+        <br>
 
         ~~~python
 
@@ -127,10 +133,12 @@ Description :-
             x_train , X_test = handel_standardization( x_train ,X_test )
         ~~~
 
-    3. Handeling Catagorical Columns.
+    3. ### **Handeling Catagorical Columns**
+
+        <br>
 
         1. This is a extra feature which is very useful in vizvalizaing how many catagorical variables are there in a perticular column.
-        This tells us if we should remove a column with lot of catagorical variables since it can increase featues by a greater amount.
+        This tells us if we should remove a column with lot of catagorical variables since it can increase featues by a greater amount after One hot encoding.
 
             <br>
 
@@ -160,7 +168,9 @@ Description :-
             ~~~ 
         
 
-        2. This will convert all the Object type columns in One hot encodings.
+        2. **This will convert all the Object type columns in One hot encodings.**
+            
+            <br>
 
             ~~~python
 
@@ -193,7 +203,9 @@ Description :-
 
             ~~~
 
-    4. **Preprocessing** 
+    4. ### **Preprocessing** 
+
+        <br>
 
         ~~~python
 
@@ -221,9 +233,11 @@ Description :-
 
 
 
-* Removing Multicolinier
+* ## **Removing Multicolinier**
+    <br>
 
-    1. Using VIF
+    1. ### **Using VIF**
+        <br>
 
         ~~~python
             def handel_Multico_VIF(DATA,sl=5,con=False):
@@ -247,7 +261,7 @@ Description :-
             
         ~~~
 
-    2. **Using Correlation (Faster)**
+    2. ### **Using Correlation (Faster)**
 
         ~~~python
 
@@ -269,12 +283,12 @@ Description :-
         ~~~
 
 
-* Feature Selection
+* ## **Feature Selection**
 
-    You just have to call these functions they will return the features based on certain parameters givenby the programer.
+    You just have to call these functions they will return the features based on certain parameters you will give.
 
 
-    1. Backward Elimination
+    1. ### **Backward Elimination**
 
         <img src="IMAGES\back.png" width="600px">
 
@@ -306,7 +320,8 @@ Description :-
 
         ~~~
 
-    2. Feature Importance
+    2. ### **Feature Importance**
+        <br>
 
         <img src="IMAGES\FEATURES.png" height="300px" width="600px">
 
@@ -335,7 +350,8 @@ Description :-
 
         ~~~
 
-    3. Corrilation Methoud
+    3. ### **Corrilation Methoud**
+        <br>
 
         This Method has two module.
 
@@ -348,9 +364,10 @@ Description :-
         ~~~
 
         **First module** will show the correlation of features with the target column. This will makes easy to decide the minimum correlation value to select features.
-
         
-        <img src="IMAGES\CORR1.png" height="300px" width="600px" >
+        <br>
+        
+        <img src="IMAGES\CORR1.png" height="300px" width="700px" >
     
         ~~~python
 
@@ -379,7 +396,8 @@ Description :-
 
         ~~~
 
-        **Secound module** will return the selected features depending upon the **correlation value selected**.
+        ### **Secound module** will return the selected features depending upon the **correlation value selected**.
+        <br>
 
         ~~~python
             def Corrilation_selection(DATA_X,target_column=None,target_index=-1,Minimum_Corr=0):
@@ -405,9 +423,10 @@ Description :-
         ~~~
 
 
-     4. Univarient Selection
+    4. ### **Univarient Selection**
+        <br>
 
-        <img src="IMAGES\UNIVARIENT.png" height="300px" width="600px">
+        <img src="IMAGES\UNIVARIENT.png" height="300px" width="700px">
 
         ~~~python
 
@@ -432,17 +451,21 @@ Description :-
 
         ~~~
 
+<br>
 
-
-* Model Selection
+* ## **Model Selection**
+    <br>
 
     After Selection almost everyrhing is done .
     Now we just have to split the data and pepare one the Models.
     But there are lots of model out there which one to select this is where it comes in handy.
 
-    <img src ="IMAGES\MODEL.png" height="300px" width="600px" >
+    <img src ="IMAGES\MODEL.png" height="300px" width="700px" >
+    
+    <br><br>
 
-    1. Regression Model Selection
+    1. ### **Regression Model Selection**
+        <br>
 
         ~~~python
 
@@ -470,7 +493,8 @@ Description :-
         ~~~ 
 
 
-    2. Classification Model Selection
+    2. ### **Classification Model Selection**
+        <br>
 
         ~~~python
 

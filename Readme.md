@@ -1,62 +1,77 @@
-# Model Automation
+# **Model Automation**
 
-This library  will help in automating the process of model making (Regresion / Classification).
-It will help in
+<br>
+
+This library  will help in automating the processes of Model making (Regression / Classification) ,In few lines of code. One of the major  parts are **Selection of Importent Features and Model .**
+**All the Modules are properly documented ,You can find it [here](https://github.com/Sudhanshu1304/ModelAuto/blob/master/Documentation/Document.md)**
+
+The modules help in -
+
 1. Data Preprocessing
 2. Removing Multicolinierity
 3. **Selecting Features** ❤
-4. Selecting best Model { Regress - (LR ,..,Random Forest) , Classi - (LogR ,..,Svm..) }
+4. **Selecting best Model** (Reg- LR , SVM ,... Classif- SVM ,LogR , ...)
 
-**Advance housing :- A small demo has been given bellow** 
+> ### **Most of the modules have  graphical techniques for better decision making at Selecting Features and Models**
 
 
-Description :-
+<br><br>
 
-* Usages
+## **Description**
+
+* ### Usage
+
     * Getting Started
-    * Sample Code for complete model
-* Demo on kaggle - **Advance housing Prices**
+    * **Demo Code - (Kaggle Housing Price)**
 
-    * About
+* ### **Demo on KAGGLE - Housing Prices (Advance Regression)**
+    
 
-    * Data preprocessing
-        * Handling Nan
-        * Handeling Standerdization
-        * Handeling Catagorical Columns. 
-        * **Preprocessing** ( **All in one🤔** )
-
-    * Removing Multicolinier
-        * Using VIF
-        * **Using Correlation (Faster)**
-
-    * Feature Selection
-        * Backward Elimination
-        * Feature Importance
-        * Corrilation Methoud
-        * Univarient Selection
-
-    * Model Selection
-        * Regression Model Selection
-        * Classification Model Selection
+   
 
 
 ## **Usages**
+<br>
 
-* Getting Started
+* ### Getting Started
 
     ~~~python
-
         pip install ...
-
     ~~~
+<br>
 
-* Sample Code for complete model
+* ### Demo Code for complete model
 
     ~~~python
 
-        DATA = '''Import data'''
 
-        ''' Datapreprocessing '''
+        DATA = '''Importing Data'''
+        
+                            ''' Data Preprocessing '''
+
+        X_train , X_test = Preprocessing( X_train, X_test , Multi =True)
+
+                            ''' Select best Features '''
+
+        Features = backwardElimination( x_train , y_train )
+        
+                            '''  Select best Model    '''
+
+        x_train, x_test, y_train, y_test = train_test_split( Features , y_train, test_size=0.2, random_state=1 )
+
+        Model = Select_Model_Regression( x_train,x_test,y_train,y_test )
+
+
+        Predictions = Model.predict('Test Data')
+
+        print('Done !!!, Now you can make predications !!!😀😀')
+
+
+
+                                                     OR
+
+                '''For more choices flexibility data preprocessing could be broken into few quick steps '''
+
 
         x_data = handel_nan(x_data)
 
@@ -66,19 +81,30 @@ Description :-
 
         x_train , x_test = handel_Catagorical( x_train , x_test )
 
-        ''' Feature Selection '''
-
-        selected_features = backwardElimination( x_train , y_train )
-        
-        ''' Model Execution '''
-
-        x_train,x_test,y_train,y_test = train_test_split( selected_features , y_train, test_size=0.2, random_state=1 )
-
-        selected_model = Select_Model_Regression( x_train,x_test,y_train,y_test )
-
-        print(' Model Accurecy is : ', selected_model.predict(x_test) )
         
         print("Done !!!😃😃")
 
     ~~~
+
+<br>
+
+## **Demo on KAGGLE - Housing Prices (Advance Regression)**
+
+<br>
+
+<img src="Documentation\IMAGES\KAG1.png" height="280px" width="800px">
+
+<br><br>
+
+### [Link to Kaggle Competion](https://www.kaggle.com/c/house-prices-advanced-regression-techniques)
+
+A detailed documentation is given on the various modules.
+In this documentation implimentation on the **Kaggle Competition** have been shown.
+We will be looking at-
+
+How to use various **Feature selection** methods
+and Model selection methods.
+
+### [Link to the Documentation](https://github.com/Sudhanshu1304/ModelAuto/blob/master/Documentation/Document.md)
+
 

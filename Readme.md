@@ -9,8 +9,8 @@ The modules help in -
 
 1. Data Preprocessing
 2. Removing Multicolinierity
-3. **Selecting Features** ❤
-4. **Selecting best Model** (Reg- LR , SVM ,... Classif- SVM ,LogR , ...)
+3. **Selecting Features** 😀
+4. **Selecting best Model 😉** (Reg- LR , SVM ,... Classif- SVM ,LogR , ...)
 
 > ### **Most of the modules have  graphical techniques for better decision making at Selecting Features and Models**
 
@@ -21,10 +21,10 @@ The modules help in -
 
 * ### Usage
 
-    * Getting Started
-    * **Demo Code - (Kaggle Housing Price)**
+    * [Getting Started](#Getting%Started)
+    * [**Demo Code - (Kaggle Housing Price)**](#Demo%Code)
 
-* ### **Demo on KAGGLE - Housing Prices (Advance Regression)**
+* ### [**Demo on Kaggle - Housing Prices (Advance Regression)**](#Demo%on%Kaggle%-%Housing%Prices)
     
 
    

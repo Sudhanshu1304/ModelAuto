@@ -8,18 +8,17 @@ Bellow is the detailed implientation of the various modules
 <br>
 
 * ### Demo on kaggle - **Advance housing Prices**
-    <br>
 
     * ### [About]( #About )
 
     * ### Data preprocessing
-        * [Handling Nan](#Handling%Nan)
-        * [Handeling Standerdization](#Handling%Standerdization)
-        * [Handeling Catagorical Columns](#Handling%Catagorical%Columns) 
-        * [**Preprocessing** ( **All in one😀** )](#Preprocessing)
+        * [Handling Nan]( #Handling%20Nan)
+        * [Handeling Standerdization](#Handling&#32;Standerdization)
+        * [**Handeling Catagorical Columns**]( #Handling%Catagorical%Columns ) 
+        * [**Preprocessing** ( **All in one😀** )]( #Preprocessing )
 
     * ### Removing Multicolinier
-        * [Using VIF](#Using%VIF)
+        * [**Using VIF**](#Using%VIF)
         * [**Using Correlation (Faster)**](#Using%Corrilation%(Faster))
 
     * ### Feature Selection

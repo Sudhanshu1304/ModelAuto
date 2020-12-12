@@ -85,7 +85,8 @@ Description :-
 ## Demo on kaggle - **Advance housing Prices**
 <br>
 
-<img src="ModelAuto\IMAGES\KAGGLE.png" width="600px">
+
+<img src="IMAGES\KAGGLE.png" width="600px">
 <br><br>
 
 * About 
@@ -180,7 +181,7 @@ Description :-
 
             <br>
 
-            <img src="ModelAuto\IMAGES\Catago.png" width=600px >
+            <img src="IMAGES\Catago.png" width=600px >
             
             <br>
 
@@ -293,7 +294,7 @@ Description :-
 
     1. Backward Elimination
 
-        <img src="ModelAuto\IMAGES\back.png" width="600px">
+        <img src="IMAGES\back.png" width="600px">
 
         First graph shows how the accuracy increasing is *incresing* with the *decrese** in features.
         Secound is showing **increase** in accuracy with the **itteration**. But as we can see after some time the change in accuracy stops. It have selected arround 100 features from 160 features.
@@ -325,7 +326,7 @@ Description :-
 
     2. Feature Importance
 
-        <img src="ModelAuto\IMAGES\FEATURES.png" height="300px" width="600px">
+        <img src="IMAGES\FEATURES.png" height="300px" width="600px">
 
         
 
@@ -367,7 +368,7 @@ Description :-
         **First module** will show the correlation of features with the target column. This will makes easy to decide the minimum correlation value to select features.
 
         
-        <img src="ModelAuto\IMAGES\CORR1.png" height="300px" width="600px" >
+        <img src="IMAGES\CORR1.png" height="300px" width="600px" >
     
         ~~~python
 
@@ -424,7 +425,7 @@ Description :-
 
      4. Univarient Selection
 
-        <img src="ModelAuto\IMAGES\UNIVARIENT.png" height="300px" width="600px">
+        <img src="IMAGES\UNIVARIENT.png" height="300px" width="600px">
 
         ~~~python
 

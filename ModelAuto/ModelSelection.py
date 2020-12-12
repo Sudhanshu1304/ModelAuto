@@ -21,8 +21,6 @@ def Select_Model_Regression(x_train,x_test,y_train,y_test,degree=2):
             
             degree = degree of polinomial regresoin (default = 2)
             
-        
-        
         Returns:
             Model with heighest Rsq.
             Along with model compaing plot.

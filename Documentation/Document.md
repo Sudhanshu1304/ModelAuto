@@ -39,15 +39,17 @@ Bellow is the detailed implientation of the various modules
 
 
 <img src="IMAGES\KAGGLE.png" width="800px">
-<br><br>
+<br>
 
 * ## **About** 
 
     The dataset of this Housing Prices contains **a total of 163 columns** 
-    String -> 96
-    Int    -> 61
-    id     -> 3
-    Other  -> 3
+    
+    String -> 96<br>
+    Int    -> 61<br>
+    id     -> 3<br>
+    Other  -> 3<br>
+
 
     Looking at the above values we could defintly say that it will require  many hours to get at least a good result.
     
@@ -141,7 +143,7 @@ Bellow is the detailed implientation of the various modules
 
             <br>
 
-            <img src="IMAGES\Catago.png" width=600px >
+            <img src="IMAGES\Catago.png" width=750px >
             
             <br>
 
@@ -289,7 +291,7 @@ Bellow is the detailed implientation of the various modules
 
     1. ### **Backward Elimination**
 
-        <img src="IMAGES\back.png" width="600px">
+        <img src="IMAGES\back.png" width="750px" height="300px">
 
         First graph shows how the accuracy increasing is *incresing* with the *decrese** in features.
         Secound is showing **increase** in accuracy with the **itteration**. But as we can see after some time the change in accuracy stops. It have selected arround 100 features from 160 features.
@@ -322,7 +324,7 @@ Bellow is the detailed implientation of the various modules
     2. ### **Feature Importance**
         <br>
 
-        <img src="IMAGES\FEATURES.png" height="300px" width="600px">
+        <img src="IMAGES\FEATURES.png" height="300px" width="750px">
 
         
 
@@ -366,7 +368,7 @@ Bellow is the detailed implientation of the various modules
         
         <br>
         
-        <img src="IMAGES\CORR1.png" height="300px" width="700px" >
+        <img src="IMAGES\CORR1.png" height="300px" width="750px" >
     
         ~~~python
 
@@ -425,7 +427,7 @@ Bellow is the detailed implientation of the various modules
     4. ### **Univarient Selection**
         <br>
 
-        <img src="IMAGES\UNIVARIENT.png" height="300px" width="700px">
+        <img src="IMAGES\UNIVARIENT.png" height="300px" width="750px">
 
         ~~~python
 
@@ -459,7 +461,7 @@ Bellow is the detailed implientation of the various modules
     Now we just have to split the data and pepare one the Models.
     But there are lots of model out there which one to select this is where it comes in handy.
 
-    <img src ="IMAGES\MODEL.png" height="300px" width="700px" >
+    <img src ="IMAGES\MODEL.png" height="300px" width="750px" >
     
     <br><br>
 

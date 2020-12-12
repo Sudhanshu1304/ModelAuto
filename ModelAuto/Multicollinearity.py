@@ -39,7 +39,7 @@ def Get_VIF(X):
 # Removing Multicollniearity Methoud - 1
 
 
-def handel_Multicollinearity_Corr(DATA,sl=0.7):
+def handel_Multico_Corr(DATA,sl=0.7):
     
     """[summary]
         DESCRIPTION :-
@@ -77,7 +77,7 @@ def handel_Multicollinearity_Corr(DATA,sl=0.7):
 # Removing Multicollniearity Method - 2
 
 
-def handel_Multicollinearity_VIF(DATA,sl=5,con=False):
+def handel_Multico_VIF(DATA,sl=5,con=False):
     
     """[summary]
 

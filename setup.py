@@ -29,6 +29,7 @@ setup(
   author_email='sudhanshu.dpandey@gmail.com',
   license='MIT', 
   classifiers=classifiers,
+  download_url='https://github.com/Sudhanshu1304/ModelAuto/archive/v0.1.tar.gz',
   keywords=['Machine Learning','Model','Regression','Classification','Automation','Data Preprocessing','Preprocessing','Feature Selection','Model Selection','SVM'], 
 
   install_requires=['pandas','numpy','sklearn','seaborn','matplotlib',] 

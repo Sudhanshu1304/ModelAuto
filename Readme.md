@@ -22,6 +22,7 @@ The modules help in -
 * ### Usage
 
     * [Getting Started](#Getting%Started)
+    * [Required Libraries](#Required%Libraries)
     * [**Demo Code - (Kaggle Housing Price)**](#Demo%Code)
 
 * ### [**Demo on Kaggle - Housing Prices (Advance Regression)**](#Demo%on%Kaggle%-%Housing%Prices)
@@ -35,41 +36,56 @@ The modules help in -
 * ### Getting Started
 
     ~~~python
-        pip install ...
+
+       ' Model Automation '
+
+        pip install ModelAuto
+
     ~~~
+<br>
+
+* ### Required Libraries
+
+    **1. Sklearn**<br>
+    **2. seaborn**<br>
+    **3. statsmodels**
+
 <br>
 
 * ### Demo Code for complete model
 
     ~~~python
 
+        from ModelAuto.Datapreprocess import Preprocessing
+        from ModelAuto.FeatureSelection import backwardElimination
+        from ModelAuto.ModelSelection import Regress_model
 
-        DATA = '''Importing Data'''
+        DATA = pd.read_csv('Path/to/file.csv')
         
-                            ''' Data Preprocessing '''
+
+                            ''' 1. Data Preprocessing '''
 
         X_train , X_test = Preprocessing( X_train, X_test , Multi =True)
 
-                            ''' Select best Features '''
+                            ''' 2. Select best Features '''
 
         Features = backwardElimination( x_train , y_train )
         
-                            '''  Select best Model    '''
+                            ''' 3.  Select best Model    '''
 
         x_train, x_test, y_train, y_test = train_test_split( Features , y_train, test_size=0.2, random_state=1 )
 
-        Model = Select_Model_Regression( x_train,x_test,y_train,y_test )
+        Model = Regress_model( x_train,x_test,y_train,y_test )
 
+                            ''' 4. Make Predicatoins '''
 
         Predictions = Model.predict('Test Data')
 
-        print('Done !!!, Now you can make predications !!!😀😀')
+        
+                                print('Done !!!😀😀')
 
-
-
-                                                     OR
-
-                '''For more choices flexibility data preprocessing could be broken into few quick steps '''
+                                                
+                '''For more flexibility in Data Preprocessing  '''
 
 
         x_data = handel_nan(x_data)
@@ -80,8 +96,6 @@ The modules help in -
 
         x_train , x_test = handel_Catagorical( x_train , x_test )
 
-        
-        print("Done !!!😃😃")
 
     ~~~
 

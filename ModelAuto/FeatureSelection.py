@@ -96,7 +96,7 @@ def backwardElimination(X_value,Y_value, sl=0.05,plot=True,con=False):
 #                                      Method 2 
 
 
-def Feature_Selection(X_data,Y_data,Top_Features,plot=True,SIZE=None):
+def Feature_Importence(X_data,Y_data,Top_Features,plot=True,SIZE=None):
   
   """[summary]
   

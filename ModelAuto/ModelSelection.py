@@ -96,6 +96,7 @@ def Regress_model(x_train,x_test,y_train,y_test,degree=2):
     xx=np.arange(0,5)
     plt.plot(xx,l)
     plt.ylabel('Rsq')
+    plt.title('Regression Models')
     plt. xticks(xx,x_label)
     plt.show()
 
@@ -195,6 +196,7 @@ def Classi_model(x_train,x_test,y_train,y_test):
     x_label=['Log_Reg','KNN','Svm_Lin','Svm_Nonlin','RandF','DeciTree']
     plt.ylabel('Accuracy')
     plt. xticks(xx,x_label)
+    plt.title('Classification Models')
     plt.show()
 
     if ma==0:

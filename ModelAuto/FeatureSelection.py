@@ -84,6 +84,7 @@ def backwardElimination(X_value,Y_value, sl=0.05,plot=True,con=False):
     ax[1].plot(n_ittere,y_accu)
     ax[1].set_xlabel('ITERATION')
     ax[1].set_ylabel('ACCURACY')
+    plt.title('Backward Elimination')
     plt.show()
     
   return x
@@ -180,6 +181,7 @@ def Feature_Importence(X_data,Y_data,Top_Features,plot=True,SIZE=None):
     plt.legend()
     plt.xlabel('Importance of Feature')
     plt.ylabel('Names of Features')
+    plt.title('Feature Importance')
     plt.show()
   
  
@@ -457,6 +459,7 @@ def Univariant_Selection(X_data,Y_data,Top_Features,plot=True,SIZE=None):
     top_feature.nlargest(Top_Features).plot(kind='barh')
     plt.xlabel('Importance of Feature')
     plt.ylabel('Names of Features')
+    plt.title('Univarient Selection')
     plt.show()
 
 

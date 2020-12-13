@@ -31,7 +31,7 @@ def backwardElimination(X_value,Y_value, sl=0.05,plot=True,con=False):
         It will return all the features with pvalues less than 0.05 (by default).
         
     """
-    
+  print('Feature Analysing...')
   import statsmodels.regression.linear_model as lmd
 
 
@@ -115,7 +115,7 @@ def Feature_Importence(X_data,Y_data,Top_Features,plot=True,SIZE=None):
     
   """
   
-  
+  print('Feature Analysing...')
   from sklearn.ensemble import ExtraTreesClassifier
   
   if Top_Features==0:
@@ -324,7 +324,7 @@ def Corrilation_selection(DATA_X,target_column=None,target_index=-1,Minimum_Corr
         DataFrame of Seleted features
       
   """
-  
+  print('Feature Analysing...')
   Thresh=Minimum_Corr
   Y_DATA=target_column
   y_index=target_index
@@ -390,6 +390,7 @@ def Univariant_Selection(X_data,Y_data,Top_Features,plot=True,SIZE=None):
         DataFrame of Seleted features
         
   """
+  print('Feature Analysing...')
   
   if Top_Features==0:
     

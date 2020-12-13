@@ -7,12 +7,13 @@ import matplotlib.pyplot as plt
 
 
 
-def Select_model_Regression(x_train,x_test,y_train,y_test,degree=2):
+def Regress_model(x_train,x_test,y_train,y_test,degree=2):
     
   
     """[summary]
 
         DESCRIPTION :-
+            Regressin Model selection.
             This Model will compare all the different Regression models, and will return model with highest Rsq value.
             It also shows performance graph comaring the models.
 
@@ -26,7 +27,7 @@ def Select_model_Regression(x_train,x_test,y_train,y_test,degree=2):
             Along with model compaing plot.
             
     """
-  
+    print('Regression Model Selection...')
 
     from sklearn.linear_model import LinearRegression
     from sklearn.preprocessing import PolynomialFeatures
@@ -111,11 +112,12 @@ def Select_model_Regression(x_train,x_test,y_train,y_test,degree=2):
 
 
 
-def Select_model_Classification(x_train,x_test,y_train,y_test):
+def Classi_model(x_train,x_test,y_train,y_test):
     
     """[summary]
 
         DESCRIPTION :-
+            Classification model selection.
             This Model will compare all the different Classification models, and will return model with highest Accuracy value.
             
             It also shows performance graph comaring the models.
@@ -128,7 +130,8 @@ def Select_model_Classification(x_train,x_test,y_train,y_test):
             Along with model compaing plot. 
     """
 
-
+    print('Classification Model Selection...')
+    
     from sklearn.linear_model import LogisticRegression 
     from sklearn.neighbors import KNeighborsClassifier
     from sklearn.svm import SVC

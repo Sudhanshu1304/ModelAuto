@@ -28,8 +28,8 @@ Bellow is the detailed implientation of the various modules
         * [Univarient Selection](#Univarient%Selection)
 
     * ### Model Selection
-        * [Regression Model Selection](#Regression%Model%Selection)
-        * [Classification Model Selection](#Classification%Model%Selection)
+        * [Regression Model Selection](#Regress_model)
+        * [Classification Model Selection](#Classi_model)
 
 
 <br><br>
@@ -470,11 +470,12 @@ Bellow is the detailed implientation of the various modules
 
         ~~~python
 
-            def Select_Model_Regression(x_train,x_test,y_train,y_test,degree=2):
+            def Regress_model(x_train,x_test,y_train,y_test,degree=2):
 
                 """[summary]
 
                     DESCRIPTION :-
+                        Regression model selection.
                         This Model will compare all the different Regression models, and will return model with highest Rsq value.
                         It also shows performance graph comaring the models.
 
@@ -489,7 +490,7 @@ Bellow is the detailed implientation of the various modules
                         
                 """
 
-            Model = Select_Model_Regression(x_train,x_test,y_train,y_test)
+            Model = Regress_model(x_train,x_test,y_train,y_test)
 
         ~~~ 
 
@@ -499,11 +500,12 @@ Bellow is the detailed implientation of the various modules
 
         ~~~python
 
-            def Select_model_Classification(x_train,x_test,y_train,y_test):
+            def Classi_model(x_train,x_test,y_train,y_test):
 
                 """[summary]
 
                     DESCRIPTION :-
+                        Classification model selection.
                         This Model will compare all the different Classification models, and will return model with highest Accuracy value.
                         
                         It also shows performance graph comaring the models.

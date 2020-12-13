@@ -292,7 +292,7 @@ def Preprocessing(X_data, X_test=None ,Multi = False):
         
         
     """
-    
+    print('Data Preprocessing...')
     x_train = X_data.copy()
     x_train = handel_nan( x_train)
 

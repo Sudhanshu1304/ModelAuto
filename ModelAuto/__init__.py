@@ -4,4 +4,4 @@ from ModelAuto.Multicollinearity import Get_VIF,handel_Multico_Corr,handel_Multi
 
 from ModelAuto.FeatureSelection import backwardElimination,Feature_Importence,Draw_Corr_map,Corrilation_selection,Univariant_Selection
 
-from ModelAuto.ModelSelection import Select_model_Regression,Select_model_Classification
+from ModelAuto.ModelSelection import Regress_model,Classi_model

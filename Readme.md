@@ -18,6 +18,9 @@ The modules help in -
 
 ### [Link to Video Demo](https://www.linkedin.com/feed/update/urn:li:activity:6743887154126061568/)
 
+
+### [Link to PyPi](https://pypi.org/project/ModelAuto/0.5/)
+
 <br><br>
 
 ## **Description**

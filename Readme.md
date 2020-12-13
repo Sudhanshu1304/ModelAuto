@@ -14,6 +14,9 @@ The modules help in -
 
 > ### **Most of the modules have  graphical techniques for better decision making at Selecting Features and Models**
 
+<br>
+
+### [Link to Video Demo](https://www.linkedin.com/feed/update/urn:li:activity:6743887154126061568/)
 
 <br><br>
 

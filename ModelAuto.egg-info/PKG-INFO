@@ -1,0 +1,26 @@
+Metadata-Version: 1.1
+Name: ModelAuto
+Version: 0.2
+Summary: Speed up your model making process. This will help you in selecting best features, best Models (SVM,SVR Random Fotest e.t.c and also in Data Preprocessing
+Home-page: https://github.com/Sudhanshu1304/ModelAuto
+Author: Sudhanshu Pandey
+Author-email: sudhanshu.dpandey@gmail.com
+License: MIT
+Download-URL: https://github.com/Sudhanshu1304/ModelAuto/archive/v0.2.tar.gz
+Description: UNKNOWN
+Keywords: Machine Learning,Model,Regression,Classification,Automation,Data Preprocessing,Preprocessing,Feature Selection,Model Selection,SVM
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: Intended Audience :: Education
+Classifier: Operating System :: Microsoft :: Windows :: Windows 10
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.0
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9

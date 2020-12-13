@@ -1,0 +1,12 @@
+setup.cfg
+setup.py
+ModelAuto/Datapreprocess.py
+ModelAuto/FeatureSelection.py
+ModelAuto/ModelSelection.py
+ModelAuto/Multicollinearity.py
+ModelAuto/__init__.py
+ModelAuto.egg-info/PKG-INFO
+ModelAuto.egg-info/SOURCES.txt
+ModelAuto.egg-info/dependency_links.txt
+ModelAuto.egg-info/requires.txt
+ModelAuto.egg-info/top_level.txt

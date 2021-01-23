@@ -79,6 +79,7 @@ def handel_Multico_Corr(DATA,sl=0.7):
 
 def handel_Multico_VIF(DATA,sl=5,con=False):
     
+
     """[summary]
 
         DESCRIPTIONS :-
@@ -95,7 +96,7 @@ def handel_Multico_VIF(DATA,sl=5,con=False):
     """
 
     def A(DATA,sl,con):
-
+      from statsmodels.stats.outliers_influence import variance_inflation_factor as vir
       X_df=DATA
 
       if sl>1:

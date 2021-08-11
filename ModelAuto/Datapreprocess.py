@@ -296,7 +296,7 @@ def Preprocessing(X_data, X_test=None ,Multi = False):
     x_train = X_data.copy()
     x_train = handel_nan( x_train)
 
-    if type(X_data) !=type(None):
+    if type(X_test) !=type(None):
         x_test =X_test.copy()
         x_test  = handel_nan(X_test)
 

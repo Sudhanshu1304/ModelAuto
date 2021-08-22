@@ -51,8 +51,7 @@ def handel_nan(DATA, Median=False):
 
 # Normalizing or Standardizing DataFrame
 
-
-def handel_standardization(X_train, X_test = None):
+def handel_standardization(X_train, X_test = None,scale_range=(0,1)):
   
     """[summary]
 
@@ -64,6 +63,7 @@ def handel_standardization(X_train, X_test = None):
         PARAMETERS :-
             X_train = Data or X_data
             X_test  = If you have seprate Test data you can standerdize both at the same time.
+            scale_range = it will scale the data between 0,1 by default
             
         Returns:
             If Input = X_train ,X_test
@@ -76,7 +76,7 @@ def handel_standardization(X_train, X_test = None):
 
     train = X_train
     test  = X_test    
-    if type(test) != type(None):
+    if test is not None:
         data = train.copy()
         Test = test.copy()
 
@@ -92,12 +92,10 @@ def handel_standardization(X_train, X_test = None):
 
     if(len(Row) != 0):
       
-      
-      
-      from sklearn.preprocessing import StandardScaler
-      sc = StandardScaler()
+      from sklearn.preprocessing import MinMaxScaler 
+      sc = MinMaxScaler(feature_range=scale_range)
 
-      if type(test) != type(None):
+      if test is not None:
 
           dat = sc.fit_transform(data[Row])
           Tes = sc.transform(Test[Row])
@@ -114,8 +112,8 @@ def handel_standardization(X_train, X_test = None):
           return data
 
 
-# Handling Catagorical Variables
 
+# Handling Catagorical Variables
 
 def handel_Catagorical(Train_X, Test_Y=None, selected=None,remo_dupli=True):
   
@@ -133,10 +131,8 @@ def handel_Catagorical(Train_X, Test_Y=None, selected=None,remo_dupli=True):
         
             Train_X = Data or X_data
             Test_Y = If you have seprate Test data
-            selected (list ) = User can selected columns on which to perform One hot encoding
-                      list- could contain names of columns
-                                  or
-                            could contain Index too .
+            selected (list ) = [0,4,5] i.e index OR ['feature1','feature2'] i.e names of columns,
+            if None is will process all the Catagorical columns
                             
             remo_dupli = will remove duplicated columns if any
 
@@ -147,7 +143,7 @@ def handel_Catagorical(Train_X, Test_Y=None, selected=None,remo_dupli=True):
 
   DATA_X = Train_X.copy()
 
-  if (type(Test_Y) != type(None)):
+  if (Test_Y is not None):
       
       DATA_Y = Test_Y.copy()
 
@@ -159,7 +155,7 @@ def handel_Catagorical(Train_X, Test_Y=None, selected=None,remo_dupli=True):
 
   col = DATA_X.columns
 
-  if type(selected) != type(None):
+  if selected is not None:
 
       column = []
 
@@ -175,7 +171,7 @@ def handel_Catagorical(Train_X, Test_Y=None, selected=None,remo_dupli=True):
 
   for row in data:
 
-      if type(selected) != type(None):
+      if selected is not None:
 
           if row in column:
 
@@ -197,7 +193,7 @@ def handel_Catagorical(Train_X, Test_Y=None, selected=None,remo_dupli=True):
   if remo_dupli==True:
     data = data.loc[:,~data.columns.duplicated()]
 
-  if type(Test_Y) != type(None):
+  if (Test_Y is not  None):
 
       Train = data.iloc[:len(Train_X), :]
       Test = data.iloc[len(Train_X):, :]
@@ -210,12 +206,16 @@ def handel_Catagorical(Train_X, Test_Y=None, selected=None,remo_dupli=True):
 
 
 
-def No_of_Catagorical( DATA, graph = True, text=True, SIZE = None ):
+
+
+def No_of_Catagorical( DATA, graph = True,  SIZE = None ):
   
   """[summary]
 
     DESCRIPTION :-
-        This is a helpfull Vizvalization Methoud
+        Somtimes converting all the catagorical columns dif=rectelly into One Hot Encoding (dummies) may lead to exponential
+        dimentional expanstion hence this plot is there any feature with large no of catagorical variables 
+      
         It will show a graph of Total no. of Catagorical Variables in each columns.
     
     PARAMETERS :-
@@ -227,7 +227,7 @@ def No_of_Catagorical( DATA, graph = True, text=True, SIZE = None ):
         DataFrame of No of Catagorical Variables in each column. 
         
   """
-  def A(DATA,graph=False,text=True):
+  def A(DATA,graph=False):
     if(graph==True):
       values=[]
       ROW=[]
@@ -263,9 +263,9 @@ def No_of_Catagorical( DATA, graph = True, text=True, SIZE = None ):
     
     
   try:
-    A(DATA=DATA,graph=graph,text=text)
+    return A(DATA=DATA,graph=graph)
   except:
-    A(DATA=DATA,graph=graph,text=text)
+    return A(DATA=DATA,graph=graph)
     
     
     
@@ -274,8 +274,7 @@ def No_of_Catagorical( DATA, graph = True, text=True, SIZE = None ):
 #        Automating Data Prepocessing
 
 
-
-def Preprocessing(X_data, X_test=None ,Multi = False):
+def Preprocessing(X_data, X_test=None ,Multi = False,catagorical_columns=None, corr = 0.7,scalerange=(0,1)):
     
     """[summary
     
@@ -285,7 +284,9 @@ def Preprocessing(X_data, X_test=None ,Multi = False):
         PARAMETERS :-
             X_data = features datadet
             X_test = test datadet
-            Multi = if true it will remove multicollniearity.   
+            Multi = if true it will remove multicollniearity using Corelation by Default corr is 0.7.
+            catagorical_columns = [0,4,5] OR ['feature1','feature2'],if None is will process all the Catagorical columns
+            scalerange = it will scale the data between 0,1 by default 
     
     Returns:
         Dateframe after doing data preprocessing.
@@ -296,27 +297,29 @@ def Preprocessing(X_data, X_test=None ,Multi = False):
     x_train = X_data.copy()
     x_train = handel_nan( x_train)
 
-    if type(X_test) !=type(None):
+    if X_test is not None:
         x_test =X_test.copy()
         x_test  = handel_nan(X_test)
-
-        x_train , x_test = handel_standardization(x_train,x_test)
-        x_train , x_test = handel_Catagorical(x_train , x_test)
+        
+        x_train , x_test = handel_standardization(x_train,x_test,scale_range=scalerange)
+        x_train , x_test = handel_Catagorical(x_train , x_test,selected=catagorical_columns)
 
     else:
     
-        x_train = handel_standardization(x_train)
-        x_train = handel_standardization(x_train)
+        x_train = handel_standardization(x_train,scale_range=scalerange)
+        x_train = handel_Catagorical(x_train,selected=catagorical_columns)
     
 
     if Multi== True:
         
         from Multicollinearity import handel_Multico_Corr
         
-        x_train = handel_Multico_Corr(x_train)
+        x_train = handel_Multico_Corr(x_train,sl=corr)
 
-    if type(X_data) !=type(None):
+    if X_test is not None:
+        print('Done!')
         return x_train , x_test
     else:
+        print('Done!')
         return x_train
 

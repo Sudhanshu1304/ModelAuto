@@ -102,6 +102,7 @@ def Feature_Importence(X_data,Y_data,Top_Features,plot=True,SIZE=None):
   """[summary]
   
       Description :-
+        Used Only for Classification Problems 
         These methoud gives scores for each independent feature. Heigher the score more is its importance.
         This will show us Graph of Top X (given by user) features .
           
@@ -307,7 +308,6 @@ def Draw_Corr_map(DATA_X,target_column=None,target_index=-1,heat_map=False):
 
 
 
-
 def Corrilation_selection(DATA_X,target_column=None,target_index=-1,Minimum_Corr=0):
 
   
@@ -333,7 +333,7 @@ def Corrilation_selection(DATA_X,target_column=None,target_index=-1,Minimum_Corr
   
   DATA=DATA_X.copy()
 
-  if (type(Y_DATA)!=type(None)):
+  if (Y_DATA is not None):
 
     DATA=pd.concat([DATA,Y_DATA],axis=1)
   
@@ -342,7 +342,7 @@ def Corrilation_selection(DATA_X,target_column=None,target_index=-1,Minimum_Corr
   corre=DATA.corr()
   selected=[]
 
-  if (type(y_index)==int):
+  if (type(y_index)==int ):
       ind=y_index
   elif (type(y_index)==str):
     
@@ -358,10 +358,21 @@ def Corrilation_selection(DATA_X,target_column=None,target_index=-1,Minimum_Corr
       if (abs(corre.iloc[ind][i])>=Thresh):
         selected.append(columns[i])
   
+  
+    
+  if (Y_DATA is not None):
+    
+    name = str(target_column.name)
+    if name in selected:
+       
+        selected.remove(name)
   print('Selected Features : ',selected)
-  print('No of Features Selected : ',len(selected))
-
+  print('\nNo of Features Selected : ',len(selected))
+    
   return DATA[selected]
+
+
+
 
 
 
@@ -379,7 +390,8 @@ def Univariant_Selection(X_data,Y_data,Top_Features,plot=True,SIZE=None):
   """[summary]
 
     Decription :-
-        Univariant methoud basically uses Stastical methoud to find the Features. There are different Stastical methouds depending upon the dataset. 
+        Used on;y for Clacification Tasks, it uses f_classif
+        Univariant methoud basically uses Stastical method to find the Features. There are different Stastical methods depending upon the dataset. 
         different statistical test like chi2 , f_classif tests etc .
         
     PARAMETERS :-

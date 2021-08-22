@@ -28,11 +28,11 @@ def Get_VIF(X):
         return vif_data
 
     try:
-        A(X)
+        return A(X)
 
     except:
         from statsmodels.stats.outliers_influence import variance_inflation_factor
-        A(X)
+        return A(X)
 
 
 
@@ -91,41 +91,35 @@ def handel_Multico_VIF(DATA,sl=5,con=False):
             con = It will add a Constent column if Not present already. 
         
         RETURN :-
-            Updated DataFrame after removing Multicollniearity
+            Updated [Updated DataFrame, Names of Selected Columns]
     
     """
 
-    def A(DATA,sl,con):
-      from statsmodels.stats.outliers_influence import variance_inflation_factor as vir
-      X_df=DATA
+    from statsmodels.stats.outliers_influence import variance_inflation_factor as vir
+    DATA = DATA.copy()
+    X_df=DATA
 
-      if sl>1:
+    if sl>1:
+    
+        if con==True:
+            X_df.insert(0,'Constant',1,False)
+        vif = pd.DataFrame()
         
-          if con==True:
-              X_df.insert(0,'Constant',1,False)
-          vif = pd.DataFrame()
-          
-          for _ in range(X_df.shape[1]-1):
-              head=X_df.columns
-              list=[vir(X_df.values, j) for j in range(X_df.shape[1])]
-              if max(list)>sl:
-                  X_df=X_df.drop(columns=[head[list.index(max(list))]],axis=1)
+        for _ in range(X_df.shape[1]-1):
+            head=X_df.columns
+            list=[vir(X_df.values, j) for j in range(X_df.shape[1])]
+            if max(list)>sl:
+                X_df=X_df.drop(columns=[head[list.index(max(list))]],axis=1)
 
-          vif["VIF Factor"] = list
-          vif["features"] = X_df.columns
-         
-          
-          return X_df,vif["features"]
-
-      else:
-
-          print('Value of SL should be grater than 1 !!!')
-
-
-    try:
-      A(DATA,sl,con)
-
-    except:       
+        vif["VIF Factor"] = list
+        vif["features"] = X_df.columns
         
-      from statsmodels.stats.outliers_influence import variance_inflation_factor as vir
-      A(DATA,sl,con)
+        
+        return X_df,vif["features"]
+
+    else:
+
+        print('Value of SL should be grater than 1 !!!')
+
+
+   

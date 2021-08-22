@@ -6,8 +6,7 @@ import matplotlib.pyplot as plt
 #                    Regression Model Selection
 
 
-
-def Regress_model(x_train,x_test,y_train,y_test,degree=2):
+def Regress_model(x_train,y_train,x_test=None,y_test=None,degree=2,test_size=0.1):
     
   
     """[summary]
@@ -19,7 +18,7 @@ def Regress_model(x_train,x_test,y_train,y_test,degree=2):
 
         PARAMETERS :-
             x_train,x_test,y_train,y_test = are the data after tain test split
-            
+            test_size = 10 % of original data is used for testing
             degree = degree of polinomial regresoin (default = 2)
             
         Returns:
@@ -35,6 +34,10 @@ def Regress_model(x_train,x_test,y_train,y_test,degree=2):
     from sklearn.tree import DecisionTreeRegressor
     from sklearn.ensemble import RandomForestRegressor
     from sklearn.metrics import r2_score
+    from sklearn.model_selection import train_test_split
+    
+    if x_test is None or y_test is None:
+        x_train,x_test,y_train,y_test = train_test_split(x_train,y_train,random_state=0,test_size=test_size)
 
     print('\nLinear Regression ...')
     
@@ -101,6 +104,8 @@ def Regress_model(x_train,x_test,y_train,y_test,degree=2):
     plt.show()
 
     return model
+
+
 
 
 
@@ -212,5 +217,5 @@ def Classi_model(x_train,x_test,y_train,y_test):
     else:
         model=regressor_rf
 
-        return model
+    return model
 

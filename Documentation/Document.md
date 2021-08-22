@@ -122,7 +122,7 @@ Bellow is the detailed implientation of the various modules
                 PARAMETERS :-
                     X_train = Data or X_data
                     X_test  = If you have seprate Test data you can standerdize both at the same time.
-                    
+                    scale_range = it will scale the data between 0,1 by default
                 Returns:
                     If Input = X_train ,X_test
                     ==> return Train and Test after Standardizing
@@ -188,10 +188,7 @@ Bellow is the detailed implientation of the various modules
                         
                             Train_X = Data or X_data
                             Test_Y = If you have seprate Test data
-                            selected (list ) = User can selected columns on which to perform One hot encoding
-                                    list- could contain names of columns
-                                                or
-                                            could contain Index too .
+                            selected (list ) = [0,4,5] i.e index OR ['feature1','feature2'] i.e names of columns,
                                             
                             remo_dupli = will remove duplicated columns if any
 

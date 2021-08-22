@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
  
 classifiers = [
-  'Development Status :: 3 - Alpha',
+  'Development Status :: 6 - Mature',
   'Topic :: Scientific/Engineering :: Artificial Intelligence',
   'Intended Audience :: Education',
   'Operating System :: Microsoft :: Windows :: Windows 10',
@@ -20,7 +20,7 @@ classifiers = [
 setup(
   name='ModelAuto',
   packages=['ModelAuto'],
-  version='0.5',
+  version='0.6',
   
   description='Speed up your model making process. This will help you in selecting best features, best Models (SVM,SVR Random Fotest e.t.c and also in Data Preprocessing',
   
@@ -29,7 +29,7 @@ setup(
   author_email='sudhanshu.dpandey@gmail.com',
   license='MIT', 
   classifiers=classifiers,
-  download_url='https://github.com/Sudhanshu1304/ModelAuto/archive/v0.5.tar.gz',
+  download_url='https://github.com/Sudhanshu1304/ModelAuto/archive/v0.6.tar.gz',
   keywords=['Machine Learning','Model','Regression','Classification','Automation','Data Preprocessing','Preprocessing','Feature Selection','Model Selection','SVM'], 
 
   install_requires=['pandas','numpy','seaborn','matplotlib','statsmodels','sklearn'] 

@@ -34,47 +34,34 @@ Bellow is the detailed implientation of the various modules
 
 <br><br>
 
-# **Advance Housing Prices**
+# **About**
 <br>
 
 
-<img src="IMAGES\KAGGLE.png" width="800px">
-<br>
 
-* ## **About** 
-
-    The dataset of this Housing Prices contains **a total of 163 columns** 
     
-    String -> 96<br>
-    Int    -> 61<br>
-    id     -> 3<br>
-    Other  -> 3<br>
+In general the most difficult part in any Model Preparation is 
 
+1. Features selection ( there are tptal of 163 fearures to choose from in this housing model ).
+For which we generaly have to do the analysis of each column and this will take hours.
 
-    Looking at the above values we could defintly say that it will require  many hours to get at least a good result.
-    
-    In general the most difficult part in any Model Preparation is 
-    
-    1. Features selection ( there are tptal of 163 fearures to choose from in this housing model ).
-        For which we generaly have to do the analysis of each column and this will take hours.
-
-    2. Model selection - it becomes difficult many time to choose the write type of regression or classification model to select from.
+2. Model selection - it becomes difficult many time to choose the write type of regression or classification model to select from.
 
     Let's begin now
 
     ~~~python
 
-        '''Import Data '''
+    '''Import Data '''
 
-        Train=pd.read_csv('/content/train.csv')
-        Test=pd.read_csv('/content/test.csv')
+    Train=pd.read_csv('/content/train.csv')
+    Test=pd.read_csv('/content/test.csv')
 
-        X_train=Train.iloc[:,:-1]
-        Y_train=Train.iloc[:,-1]
-        X_test=Test.iloc[:,:-1]
-        Y_test=Test.iloc[:,-1]
+    X_train=Train.iloc[:,:-1]
+    Y_train=Train.iloc[:,-1]
+    X_test=Test.iloc[:,:-1]
+    Y_test=Test.iloc[:,-1]
 
-        
+
     ~~~
 
 * ## **Data Preprocessing**
